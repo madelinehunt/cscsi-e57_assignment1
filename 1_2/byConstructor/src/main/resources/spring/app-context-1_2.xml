@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+    <!-- define books -->
+    <bean id="bookFrost" class="cscie57.assignment1_2.Book">
+      <constructor-arg value="14" type="Long"></constructor-arg>
+      <constructor-arg value="214745678" type="String"></constructor-arg>
+      <constructor-arg value="Frost Poetry" type="String"></constructor-arg>
+      <constructor-arg value="22.19" type="Float"></constructor-arg>
+    </bean>
+    
+    <bean id="bookWhitman" class="cscie57.assignment1_2.Book">
+      <constructor-arg value="15" type="Long"></constructor-arg>
+      <constructor-arg value="214745666" type="String"></constructor-arg>
+      <constructor-arg value="Whitman Poetry" type="String"></constructor-arg>
+      <constructor-arg value="26.59" type="Float"></constructor-arg>
+    </bean>
+    
+    <bean id="book" class="cscie57.assignment1_2.Book">
+      <constructor-arg value="16" type="Long"></constructor-arg>
+      <constructor-arg value="214745678" type="String"></constructor-arg>
+      <constructor-arg value="Shakespeare Poetry" type="String"></constructor-arg>
+      <constructor-arg value="36.59" type="Float"></constructor-arg>
+    </bean>
+    
+    <bean id="bookPushkin" class="cscie57.assignment1_2.Book">
+      <constructor-arg value="17" type="Long"></constructor-arg>
+      <constructor-arg value="2147451111" type="String"></constructor-arg>
+      <constructor-arg value="Pushkin Poetry" type="String"></constructor-arg>
+      <constructor-arg value="42.19" type="Float"></constructor-arg>
+    </bean>
+    
+    <!-- define categories -->
+    <bean id="category" autowire="constructor" class="cscie57.assignment1_2.Category" lazy-init="true">
+      <constructor-arg value="2" type="Long"></constructor-arg>
+      <constructor-arg value="byConstructor" type="String"></constructor-arg>
+      <constructor-arg ref="bookPushkin"/>
+    </bean>
+    
+</beans>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+    <!-- define books -->
+    <bean id="book1" class="cscie57.assignment1_1.Book">
+      <constructor-arg value="1" type="Long"></constructor-arg>
+      <constructor-arg value="123456789" type="String"></constructor-arg>
+      <constructor-arg value="Crime and Punishment" type="String"></constructor-arg>
+      <constructor-arg value="28.45" type="Float"></constructor-arg>
+    </bean>
+    
+    <bean id="book2" class="cscie57.assignment1_1.Book">
+      <constructor-arg value="2" type="Long"></constructor-arg>
+      <constructor-arg value="1232256789" type="String"></constructor-arg>
+      <constructor-arg value="Mysery" type="String"></constructor-arg>
+      <constructor-arg value="24.95" type="Float"></constructor-arg>
+    </bean>
+    
+    <bean id="book4" class="cscie57.assignment1_1.Book">
+      <constructor-arg value="4" type="Long"></constructor-arg>
+      <constructor-arg value="043225678" type="String"></constructor-arg>
+      <constructor-arg value="Pushkin Poetry" type="String"></constructor-arg>
+      <constructor-arg value="27.95" type="Float"></constructor-arg>
+    </bean>
+    
+    <bean id="book11" class="cscie57.assignment1_1.Book">
+      <constructor-arg value="11" type="Long"></constructor-arg>
+      <constructor-arg value="367456789" type="String"></constructor-arg>
+      <constructor-arg value="Shakespeare Poetry" type="String"></constructor-arg>
+      <constructor-arg value="24.25" type="Float"></constructor-arg>
+    </bean>
+    
+    <!-- define categories -->
+    <bean id="category2" class="cscie57.assignment1_1.Category">
+      <constructor-arg value="2" type="Long"></constructor-arg>
+      <constructor-arg value="Novels" type="String"></constructor-arg>
+      
+      <property name="booksSet">
+          <set>
+              <ref bean="book1"/>
+              <ref bean="book2"/>
+          </set>
+      </property>
+    </bean>
+    
+    <bean id="category3" class="cscie57.assignment1_1.Category">
+      <constructor-arg value="3" type="Long"></constructor-arg>
+      <constructor-arg value="Java" type="String"></constructor-arg>
+      
+      <property name="booksList">
+          <list>
+            <bean id="book10" class="cscie57.assignment1_1.Book">
+              <constructor-arg value="10" type="Long"></constructor-arg>
+              <constructor-arg value="987456789" type="String"></constructor-arg>
+              <constructor-arg value="Core Java" type="String"></constructor-arg>
+              <constructor-arg value="34.99" type="Float"></constructor-arg>
+            </bean>
+            <bean id="book3" class="cscie57.assignment1_1.Book">
+              <constructor-arg value="3" type="Long"></constructor-arg>
+              <constructor-arg value="553225678" type="String"></constructor-arg>
+              <constructor-arg value="Java in a Nutshell" type="String"></constructor-arg>
+              <constructor-arg value="20.35" type="Float"></constructor-arg>
+            </bean>
+          </list>
+      </property>
+    </bean>
+    
+    <bean id="category4" class="cscie57.assignment1_1.Category">
+      <constructor-arg value="4" type="Long"></constructor-arg>
+      <constructor-arg value="Poetry" type="String"></constructor-arg>
+      <property name="booksMap">
+        <map>
+          <entry key="key1" value-ref="book11"/>
+          <entry key="key2" value-ref="book4"/>
+        </map>
+      </property>
+      
+    </bean>
+    
+</beans>
